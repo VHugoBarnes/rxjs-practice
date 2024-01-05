@@ -1,5 +1,15 @@
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <h1>Hello World</h1>
-  </div>
-`;
+import { Subscription, fromEvent } from "rxjs";
+
+const onMouseMove$ = fromEvent(document, "keydown");
+
+const subscription: Subscription = onMouseMove$.subscribe({
+  next(value) {
+    console.log(value);
+  },
+  complete() {
+
+  },
+  error(err) {
+
+  },
+});
